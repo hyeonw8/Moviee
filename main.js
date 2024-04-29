@@ -66,13 +66,12 @@ const searchBtn = document.querySelector('.searchBtn');
 
 function search() {
   const searchText = searchInput.value.trim().toLowerCase();
-  
+
   allMovies.forEach((movie) => {
     let movieTitle = movie.title;
     if (movieTitle.toLowerCase().includes(searchText)) {
       movieMap.get(movieTitle).style.display = 'block';
-    } 
-    else {
+    } else {
       movieMap.get(movieTitle).style.display = 'none';
     }
   });
@@ -81,15 +80,17 @@ function search() {
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 });
-
 searchBtn.addEventListener('click', (e) => {
   search();
 });
 // enter key
-searchInput.addEventListener('keyup', (e) => {
+searchInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
     search();
   }
+});
+searchInput.addEventListener('keyup', (e) => {
+  search();
 });
 // focus
 searchInput.focus();
@@ -103,6 +104,7 @@ scrollBtn.addEventListener('click', (e) => {
   });
 });
 
+// 모드 변경 저장
 document.addEventListener('DOMContentLoaded', (event) => {
   const userTheme = localStorage.getItem('theme');
   if (userTheme === 'dark') {
@@ -124,13 +126,11 @@ switchBtn.addEventListener('click', () => {
     switchDarkTheme();
   }
 });
-
-function switchDarkTheme() {
+const switchDarkTheme = () => {
   localStorage.setItem('theme', 'dark');
   html.classList.add(mode);
-}
-
-function switchLightTheme() {
+};
+const switchLightTheme = () => {
   localStorage.removeItem('theme', 'dark');
   html.classList.remove(mode);
 }
