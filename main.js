@@ -12,12 +12,13 @@ const options = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: API_KEY,
+    Authorization:
+      'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNWVhMmE4YWQ3MjY3ODczYzQ0Y2M4YjEwMDQ5Yzc5MyIsInN1YiI6IjY2MjhiMjVjYWY5NTkwMDE2NDZhMGQ4ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.F9d4xz9sqS6xrWUx9S9lK0xe1ViSZCbj2uVkHjKTfDo',
   },
 };
 
 fetch(
-  'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1',
+  `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}`,
   options
 )
   .then((res) => res.json())
@@ -134,4 +135,4 @@ const switchDarkTheme = () => {
 const switchLightTheme = () => {
   localStorage.removeItem('theme', 'dark');
   html.classList.remove(mode);
-}
+};
