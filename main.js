@@ -44,6 +44,7 @@ function paintMovies(item) {
   title.id = 'movie_title';
   const overview = document.createElement('p');
   const img = document.createElement('img');
+  img.classList.add('movie_img');
 
   rate.textContent = `평점 : ⭐️ ${item.vote_average}`;
   popular.textContent = `인기도 : ${item.popularity}`;
