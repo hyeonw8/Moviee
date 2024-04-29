@@ -4,6 +4,7 @@ const { API_KEY } = config;
 const movies = document.querySelector('#movies');
 const searchContainer = document.querySelector('.search');
 const form = document.querySelector('#form_container');
+const scrollBtn = document.querySelector('.scrollBtn');
 let movieMap = new Map();
 let allMovies;
 
@@ -65,11 +66,13 @@ const searchBtn = document.querySelector('.searchBtn');
 
 function search() {
   const searchText = searchInput.value.trim().toLowerCase();
+  
   allMovies.forEach((movie) => {
     let movieTitle = movie.title;
     if (movieTitle.toLowerCase().includes(searchText)) {
       movieMap.get(movieTitle).style.display = 'block';
-    } else {
+    } 
+    else {
       movieMap.get(movieTitle).style.display = 'none';
     }
   });
@@ -92,13 +95,13 @@ searchInput.addEventListener('keyup', (e) => {
 searchInput.focus();
 
 // scroll up
-function scrollUp() {
+scrollBtn.addEventListener('click', (e) => {
   window.scrollTo({
     top: 0,
     left: 0,
     behavior: 'smooth',
   });
-}
+});
 
 document.addEventListener('DOMContentLoaded', (event) => {
   const userTheme = localStorage.getItem('theme');
