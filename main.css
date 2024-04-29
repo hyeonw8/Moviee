@@ -139,7 +139,9 @@ footer p:last-child {
   background: var(--card-bg);
   color: var(--card-ft);
   border-radius: 20px;
+  box-shadow: 0px 0px 3px 0px #a1a1a1;
 }
+
 /* 카드 안 속성 */
 p {
   margin-bottom: 10px;
@@ -151,6 +153,9 @@ p {
 #movie_title {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+.movie_img:hover {
+  cursor: pointer;
 }
 
 /* 스크롤 버튼 */
@@ -186,7 +191,7 @@ p {
 :root {
   --header-bg: black;
   --header-ft: white;
-  --body-bg: #e1fbff;
+  --body-bg: #d5f7fc;
   --body-ft: black;
   --btn-bg: white;
   --btn-color: black;
