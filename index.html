@@ -8,15 +8,17 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="/src/css/main.css" />
+    <script src="./src/main.js" type="module"></script>
   </head>
   <body>
     <header class="header">
       <h1 class="title">Moviee</h1>
       <nav>
-          <button id="switchBtn">
-            <i class="fa-solid fa-moon fa-2x"></i>
-          </button>
+        <button id="switchBtn">
+          <i class="fa-solid fa-moon fa-2x"></i>
+        </button>
       </nav>
     </header>
     <main>
@@ -34,16 +36,16 @@
         </div>
       </section>
       <section id="content">
-        <div id="movies"></div>
+        <div id="movies">
+        </div>
       </section>
       <button class="scrollBtn">
         <i class="fa-solid fa-arrow-up fa-2x"></i>
       </button>
     </main>
     <footer>
-      <p>TMBD 선정 top 20 영화</p>
+      <p>현재 상영 중인 영화</p>
       <p>🍿</p>
     </footer>
-    <script src="main.js" type="module"></script>
   </body>
 </html>
