@@ -1,4 +1,4 @@
-import config from '../config.js';
+import config from './config.js';
 const { API_KEY } = config;
 
 const movies = document.getElementById('movies');
@@ -67,8 +67,8 @@ function handleClickCard(e) {
   if (e.target === movies) return;
 
   // 카드 클릭
-  if (e.target.matches('.movieCard')) {
-    alert(`🎬 선택하신 영화의 id는 ${e.target.childNode.id}입니다.`);
+  if (e.target.matches('.movie_card')) {
+    alert(`🎬 선택하신 영화의 id는 ${e.target.id}입니다.`);
   } else {
     // 카드의 자식 태그 클릭 시 부모의 id로 접근
     alert(`🎬 선택하신 영화의 id는 ${e.target.parentNode.id}입니다.`);
